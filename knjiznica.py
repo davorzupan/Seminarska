@@ -154,18 +154,9 @@ def dodajOznakoVBazo(oznake,tmp):
 
 #   Mal prevec kode :D enostaven swap bi delou :)
 def zamenjaj(seznam,k,l):
-    tmp_ime=seznam[k].ime
-    tmp_steviloPojavitev=seznam[k].steviloPojavitev
-    tmp_pojavitevVclanku = seznam[k].pojavitevVclanku
-
-    seznam[k].ime = seznam[l].ime
-    seznam[k].steviloPojavitev = seznam[l].steviloPojavitev
-    seznam[k].pojavitevVclanku = seznam[l].pojavitevVclanku
-
-    seznam[l].ime = tmp_ime
-    seznam[l].steviloPojavitev = tmp_steviloPojavitev
-    seznam[l].pojavitevVclanku = tmp_pojavitevVclanku
-
+    tmp = razred.oznake(seznam[k].ime,seznam[k].steviloPojavitev,seznam[k].pojavitevVclanku)
+    seznam[k] = seznam[l]
+    seznam[l] = tmp
 
 def sortiranje(seznam):
     for i in range(len(seznam)):
